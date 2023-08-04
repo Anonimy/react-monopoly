@@ -7,10 +7,7 @@ function normalizeAmount(money?: number) {
 export function normalizeAndFormatAmount(money?: number) {
   if (money) {
     const normalized = normalizeAmount(money) || 0
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(normalized)
+    return new Intl.NumberFormat('pt-BR', { currency: 'BRL' }).format(normalized) + ',00'
   }
   return ''
 }

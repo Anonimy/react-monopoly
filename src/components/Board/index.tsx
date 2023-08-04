@@ -27,12 +27,12 @@ export default function Board({ board }: BoardProps) {
 
   return (
     <>
-      <div>
+      <div style={{ position: 'fixed' }}>
         <button type="button" onClick={handleRollDice(turnPlayer)}>
           Roll dice
         </button>
       </div>
-      <div style={{ border: '1px solid black', padding: '18px 32px' }}>
+      <div style={{ margin: '0 auto', padding: 20 }}>
         <BoardRendered cells={boardRendered} />
       </div>
     </>
