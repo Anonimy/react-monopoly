@@ -4,4 +4,12 @@ export default class Player {
     private name: string,
     private money: number
   ) {}
+
+  getId() {
+    return this.id
+  }
+
+  getName() {
+    return this.name
+  }
 }

@@ -1,5 +1,6 @@
 import Board from '../models/Board';
 import Cell from '../models/Cell';
+import Player from '../models/Player';
 import { normalizeAndFormatAmount } from '../utils/money';
 
 export function createInitialBoard(): Board {
@@ -285,5 +286,7 @@ export function createInitialBoard(): Board {
       basePrice: 250,
       rents: [25, 50, 150, 250, 350, 450]
     }),
+  ], [
+    new Player('mlarrubia', 'Mateus', 2000),
   ])
 }

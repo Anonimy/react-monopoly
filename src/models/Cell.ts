@@ -20,6 +20,8 @@ interface CellPropertyProps extends CellPropsBase {
   level?: 0 | 1 | 2 | 3 | 4
 }
 
+type CellProps = CellEventProps | CellPropertyProps
+
 export default class Cell {
   private id: CellPropsBase['id']
 
@@ -35,7 +37,7 @@ export default class Cell {
 
   private rents?: CellPropertyProps['rents']
 
-  constructor (props: CellEventProps | CellPropertyProps) {
+  constructor (props: CellProps) {
     this.id = props.id
     this.name = props.name
     if (props.type === 'property') {
