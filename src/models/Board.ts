@@ -9,13 +9,15 @@ export default class Board {
   }
 
   private findPlayerCell(player: Player) {
-    let cell = this.cells[0]
-    this.coords.forEach((value, key) => {
-      if (value.getId() === player.getId()) {
-        cell = key
+    const entries = this.coords.entries()
+    while (true) {
+      const { done, value: [k, v] } = entries.next()
+      if (done) break
+      if (v.getId() === player.getId()) {
+        return k
       }
-    })
-    return cell
+    }
+    return this.cells[0]
   }
 
   movePlayer(player: Player, steps: number) {
