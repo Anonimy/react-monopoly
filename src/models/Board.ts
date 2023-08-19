@@ -8,7 +8,7 @@ export default class Board {
     this.coords = new Map(players.map(player => [cells[0], player]))
   }
 
-  private findPlayerCell(player: Player) {
+  private findPlayerCell(player: Player): Cell {
     const entries = this.coords.entries()
     while (true) {
       const { done, value: [k, v] } = entries.next()
